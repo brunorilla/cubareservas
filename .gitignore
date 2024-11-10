@@ -1,0 +1,61 @@
+# Node.js (aplica para backend y frontend)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+package-lock.json
+yarn.lock
+.pnpmfile.cjs
+.eslintcache
+
+# Logs
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# Configuración de Entorno
+.env
+.env.*.local
+
+# Directorios de Build (aplica a ambos backend y frontend)
+dist/
+build/
+
+# Coverage (Cobertura de Pruebas)
+coverage/
+*.lcov
+
+# IDE y Editor (IntelliJ, VSCode, otros)
+.idea/
+*.iml
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Directorios específicos de TypeScript
+*.tsbuildinfo
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Backend - Archivos específicos de Express
+/backend/.env
+/backend/dist/
+/backend/node_modules/
+
+# Frontend - Archivos específicos de React con TypeScript
+/frontend/.env
+/frontend/node_modules/
+/frontend/build/
+/frontend/.eslintcache
+/frontend/.parcel-cache/
+/frontend/coverage/
+
+# Archivos de testing (por ejemplo Jest)
+jest.cache/
+jest.config.js
