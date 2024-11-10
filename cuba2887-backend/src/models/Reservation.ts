@@ -1,12 +1,22 @@
 // src/models/Reservation.ts
-import mongoose from 'mongoose';
+import mongoose, { Schema, Document } from 'mongoose';
 
-const reservationSchema = new mongoose.Schema({
-    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+// Define la interfaz para el modelo de Reservation
+export interface IReservation extends Document {
+    user: mongoose.Schema.Types.ObjectId;
+    amenity: 'jacuzzi' | 'SUM' | 'lavarropas' | 'secarropas';
+    startTime: Date;
+    endTime: Date;
+}
+
+// Define el esquema de Reservation
+const reservationSchema: Schema = new Schema({
+    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
     amenity: { type: String, enum: ['jacuzzi', 'SUM', 'lavarropas', 'secarropas'], required: true },
     startTime: { type: Date, required: true },
     endTime: { type: Date, required: true }
 });
 
-const Reservation = mongoose.model('Reservation', reservationSchema);
+// Crea el modelo de Mongoose
+const Reservation = mongoose.model<IReservation>('Reservation', reservationSchema);
 export default Reservation;

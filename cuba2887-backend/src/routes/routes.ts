@@ -6,5 +6,5 @@ import {protect} from '../middlewares/authMiddleware';
 
 export const registerRoutes = (app: Express): void => {
     app.use('/api/auth', authRoutes);
-    app.use('/api/reservations', protect, reservationRoutes);  // Rutas protegidas
+    app.use('/api/reservations', reservationRoutes);  // Rutas protegidas
 };

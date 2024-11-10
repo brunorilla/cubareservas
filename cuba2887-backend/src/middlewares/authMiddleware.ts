@@ -11,6 +11,7 @@ export const protect: RequestHandler = (req, res, next) => {
 
     try {
         const decoded = jwt.verify(token, process.env.JWT_SECRET as string) as JwtPayload;
+        //@ts-ignore
         req.user = decoded.id;
         next();
     } catch (error) {
